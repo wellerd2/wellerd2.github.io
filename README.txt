@@ -1,19 +1,13 @@
-MODES Lab site package v3
+MODES Lab website package
 
-Upload all files and folders in this package to the root of the GitHub repository wellerd2.github.io.
+Files in /images that need to be replaced with real photos:
+- home-hero.jpg
+- project-urban-farm.jpg
+- headshot.jpg
 
-Included pages:
-- index.html
-- research.html
-- methods.html
-- projects.html
-- publications.html
-- outputs.html
-- team.html
-- news.html
-- contact.html
-- style.css
-- images/
+The site already includes:
+- modes-logo.png
 
-The SVG files in images/ are placeholders so the site works immediately without broken image links.
-Replace them later by keeping the same filenames or updating the HTML file paths.
+To add your own images:
+1. Put the image file in the images folder.
+2. Keep the same filename to avoid changing HTML, or update the filename in the relevant HTML page.
