@@ -1,75 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The MODES Lab</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | MODES Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Our Research</a>
-      <a href="methods.html">Research Methods</a>
-      <a href="projects.html">Current Projects</a>
-      <a href="publications.html">Publications & Output</a>
-      <a href="team.html">Team Members</a>
-      <a href="news.html">News</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="index.html">MODES Lab</a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-button" aria-label="Open navigation menu">☰</label>
+      <nav class="site-nav">
+        <a class="active" href="research.html">Research</a>
+        <a href="methods.html">Methods</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Outputs</a>
+        <a href="team.html">Team</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <h1>The MODES Lab</h1>
-    <p class="tagline">Modeling Across Agri-Food Systems & Environments</p>
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="wrap narrow">
+        <p class="eyebrow">Our Research</p>
+        <h1>Research themes</h1>
+        <p class="lead">The lab uses food safety as a lens to study how agri-food systems function, fail, and change.</p>
+      </div>
+    </section>
 
-    <p class="lead">
-      At the MODES Lab, our mission is to build safer, more sustainable, and more equitable
-      food systems. We use food safety as a lens to study how agri-food systems function and
-      change. By integrating systems thinking with data-driven analysis, field and laboratory
-      research, and close collaboration with stakeholders, we translate complex evidence into
-      actionable insights for industry, policymakers, and communities.
-    </p>
+    <section class="section">
+      <div class="wrap narrow stack-lg">
+        <article class="content-block">
+          <h2>Ecology &amp; control of pathogenic and spoilage organisms</h2>
+          <p>Pathogenic and spoilage organisms move through agri-food systems via interconnected ecological and epidemiological processes shaped by environmental conditions, agricultural practices, and human behavior. Our research examines how these organisms persist, spread, and interact with food production environments through processing and distribution, and to human and animal illness.</p>
+          <p>By linking microbial ecology with epidemiology and the development of novel control strategies, we aim to support effective, context-sensitive approaches to managing food safety risks across the food system.</p>
+        </article>
 
-    <img src="images/home-image.jpg" alt="MODES Lab homepage image" class="hero-image">
+        <article class="content-block">
+          <h2>Building safe, circular food systems</h2>
+          <p>Efforts to reduce food loss and waste and to promote circular resource use increasingly intersect with food safety goals. Interventions designed to improve safety or sustainability can create unintended ecological, economic, or health consequences when viewed in isolation.</p>
+          <p>We apply systems-based approaches to evaluate trade-offs and synergies among food safety, environmental sustainability, and circular food system objectives, with the goal of supporting strategies that protect public health while maintaining ecosystem services and long-term system viability.</p>
+        </article>
 
-    <section class="card-grid">
-      <a class="card" href="research.html">
-        <h2>Our Research</h2>
-        <p>Research themes spanning microbial ecology, epidemiology, food systems, climate, and equity.</p>
-      </a>
+        <article class="content-block">
+          <h2>Anticipating &amp; managing climate change impacts on agri-food systems</h2>
+          <p>Climate change is altering the environmental conditions that govern microbial behavior, exposure pathways, and human responses across agri-food systems. Shifts in temperature, precipitation, extreme weather, and infrastructure reliability can increase contamination risks, illness, recalls, and spoilage.</p>
+          <p>Our research focuses on understanding these climate-driven dynamics across the food system and on developing forecasting and early-warning tools that link environmental change to food safety and public health outcomes.</p>
+        </article>
 
-      <a class="card" href="methods.html">
-        <h2>Our Research Methods</h2>
-        <p>Data science, integrative analysis, systems modeling, and stakeholder-centered research.</p>
-      </a>
-
-      <a class="card" href="projects.html">
-        <h2>Current Projects</h2>
-        <p>Ongoing work across agri-food systems, environmental surveillance, and decision support.</p>
-      </a>
-
-      <a class="card" href="publications.html">
-        <h2>Publications, Datasets, Code & Other Output</h2>
-        <p>Selected papers, tools, datasets, and related outputs.</p>
-      </a>
-
-      <a class="card" href="team.html">
-        <h2>Team Members & Vacancies</h2>
-        <p>Meet the lab and learn about future opportunities.</p>
-      </a>
-
-      <a class="card" href="news.html">
-        <h2>News</h2>
-        <p>Recent lab updates, recognitions, and external coverage.</p>
-      </a>
-
-      <a class="card" href="contact.html">
-        <h2>Contact</h2>
-        <p>Get in touch about research, collaboration, and future opportunities.</p>
-      </a>
+        <article class="content-block">
+          <h2>Advancing food system equity</h2>
+          <p>Foodborne illness and food system disruptions disproportionately affect under-resourced and marginalized communities, reflecting inequities in infrastructure, exposure, and access to safe food. Our research integrates epidemiological data with environmental, food system, and social information to identify disparities in risk and outcomes across populations.</p>
+          <p>By examining how structural factors shape exposure and vulnerability, from production through consumption, we seek to support interventions and policies that improve food safety while advancing equity and resilience.</p>
+        </article>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div><p class="footer-title">MODES Lab</p></div>
+      <div><p><a href="mailto:wellerd2@gmail.com">wellerd2@gmail.com</a></p></div>
+    </div>
+  </footer>
 </body>
 </html>

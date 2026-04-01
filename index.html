@@ -1,75 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The MODES Lab</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MODES Lab | Modeling Across Agri-Food Systems & Environments</title>
+  <meta name="description" content="The MODES Lab studies food safety, sustainability, and equity across agri-food systems and environments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Our Research</a>
-      <a href="methods.html">Research Methods</a>
-      <a href="projects.html">Current Projects</a>
-      <a href="publications.html">Publications & Output</a>
-      <a href="team.html">Team Members</a>
-      <a href="news.html">News</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="wrap nav-wrap">
+        <a class="brand" href="index.html">MODES Lab</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="menu-button" aria-label="Open navigation menu">☰</label>
+        <nav class="site-nav">
+          <a href="research.html">Research</a>
+          <a href="methods.html">Methods</a>
+          <a href="projects.html">Projects</a>
+          <a href="publications.html">Outputs</a>
+          <a href="team.html">Team</a>
+          <a href="news.html">News</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-  <main class="container">
-    <h1>The MODES Lab</h1>
-    <p class="tagline">Modeling Across Agri-Food Systems & Environments</p>
+    <main>
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">University College Dublin</p>
+            <h1>The MODES Lab</h1>
+            <p class="hero-subtitle">Modeling Across Agri-Food Systems &amp; Environments</p>
+            <p class="lead">
+              We build safer, more sustainable, and more equitable food systems. Using food safety as a lens,
+              the MODES Lab studies how agri-food systems function and change by combining systems thinking,
+              data-driven analysis, field and laboratory research, and close collaboration with stakeholders.
+            </p>
+            <div class="button-row">
+              <a class="button primary" href="research.html">Explore our research</a>
+              <a class="button secondary" href="team.html">Meet the lab</a>
+            </div>
+          </div>
+          <div class="hero-panel" aria-hidden="true">
+            <div class="hero-card">
+              <div class="stat">
+                <span class="stat-label">Approach</span>
+                <strong>Systems-oriented, quantitative, translational</strong>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Focus</span>
+                <strong>Food safety, sustainability, resilience, equity</strong>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Methods</span>
+                <strong>Epidemiology, microbiology, modeling, data science</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <p class="lead">
-      At the MODES Lab, our mission is to build safer, more sustainable, and more equitable
-      food systems. We use food safety as a lens to study how agri-food systems function and
-      change. By integrating systems thinking with data-driven analysis, field and laboratory
-      research, and close collaboration with stakeholders, we translate complex evidence into
-      actionable insights for industry, policymakers, and communities.
-    </p>
+      <section class="section">
+        <div class="wrap narrow">
+          <h2>About</h2>
+          <p>
+            Our work spans microbial ecology, epidemiology, environmental surveillance, decision analysis,
+            and agri-food systems science. We are interested in how environmental, management, and social
+            conditions shape food safety risks and how evidence can be translated into practical actions for
+            producers, policymakers, and communities.
+          </p>
+        </div>
+      </section>
 
-    <img src="images/home-image.jpg" alt="MODES Lab homepage image" class="hero-image">
+      <section class="section section-soft">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Explore the lab</h2>
+            <p>A simple, easy-to-maintain structure modeled on the clarity of the Daly lab site, but tailored to your content.</p>
+          </div>
+          <div class="card-grid">
+            <a class="card" href="research.html">
+              <h3>Our Research</h3>
+              <p>Four major themes: pathogen ecology, circular food systems, climate impacts, and food system equity.</p>
+            </a>
+            <a class="card" href="methods.html">
+              <h3>Research Methods</h3>
+              <p>Data science, integrated datasets, systems modeling, and stakeholder-centered translational research.</p>
+            </a>
+            <a class="card" href="projects.html">
+              <h3>Current Projects</h3>
+              <p>Featured ongoing work across attribution, environmental surveillance, and agri-food system analytics.</p>
+            </a>
+            <a class="card" href="publications.html">
+              <h3>Publications &amp; Output</h3>
+              <p>A clean place for papers, datasets, code repositories, talks, and other output.</p>
+            </a>
+            <a class="card" href="team.html">
+              <h3>Team &amp; Vacancies</h3>
+              <p>Lab members, collaborators, and future opportunities.</p>
+            </a>
+            <a class="card" href="news.html">
+              <h3>News</h3>
+              <p>Recent recognition, external coverage, awards, and research updates.</p>
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <section class="card-grid">
-      <a class="card" href="research.html">
-        <h2>Our Research</h2>
-        <p>Research themes spanning microbial ecology, epidemiology, food systems, climate, and equity.</p>
-      </a>
+      <section class="section">
+        <div class="wrap split-grid">
+          <div>
+            <h2>What makes this version better than your first GitHub draft</h2>
+            <ul class="feature-list">
+              <li>Cleaner typography and spacing</li>
+              <li>A real homepage hierarchy instead of stacked text</li>
+              <li>Consistent page templates across the whole site</li>
+              <li>A lighter, more academic feel similar to Kevin Daly’s site</li>
+              <li>Simple HTML and CSS, so you can maintain it without learning a full framework</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>Easy to edit</h3>
+            <p>Every page is plain HTML. Update text directly in the file, commit the change, and GitHub Pages republishes the site.</p>
+            <a class="text-link" href="contact.html">Add your real contact links here</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-      <a class="card" href="methods.html">
-        <h2>Our Research Methods</h2>
-        <p>Data science, integrative analysis, systems modeling, and stakeholder-centered research.</p>
-      </a>
-
-      <a class="card" href="projects.html">
-        <h2>Current Projects</h2>
-        <p>Ongoing work across agri-food systems, environmental surveillance, and decision support.</p>
-      </a>
-
-      <a class="card" href="publications.html">
-        <h2>Publications, Datasets, Code & Other Output</h2>
-        <p>Selected papers, tools, datasets, and related outputs.</p>
-      </a>
-
-      <a class="card" href="team.html">
-        <h2>Team Members & Vacancies</h2>
-        <p>Meet the lab and learn about future opportunities.</p>
-      </a>
-
-      <a class="card" href="news.html">
-        <h2>News</h2>
-        <p>Recent lab updates, recognitions, and external coverage.</p>
-      </a>
-
-      <a class="card" href="contact.html">
-        <h2>Contact</h2>
-        <p>Get in touch about research, collaboration, and future opportunities.</p>
-      </a>
-    </section>
-  </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <p class="footer-title">MODES Lab</p>
+          <p>Modeling Across Agri-Food Systems &amp; Environments</p>
+        </div>
+        <div>
+          <p><a href="mailto:wellerd2@gmail.com">wellerd2@gmail.com</a></p>
+          <p><a href="contact.html">Contact page</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

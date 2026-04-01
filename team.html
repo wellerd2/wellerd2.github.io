@@ -1,53 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team Members | The MODES Lab</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team | MODES Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Our Research</a>
-      <a href="methods.html">Research Methods</a>
-      <a href="projects.html">Current Projects</a>
-      <a href="publications.html">Publications & Output</a>
-      <a href="team.html">Team Members</a>
-      <a href="news.html">News</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="index.html">MODES Lab</a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-button" aria-label="Open navigation menu">☰</label>
+      <nav class="site-nav">
+        <a href="research.html">Research</a>
+        <a href="methods.html">Methods</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Outputs</a>
+        <a class="active" href="team.html">Team</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <h1>Team Members</h1>
-
-    <section>
-      <h2>Daniel Weller</h2>
-      <p>Ad Astra Professor of Agri-Food System Analytics</p>
-      <p>Email: wellerd2@vt.edu</p>
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="wrap narrow">
+        <p class="eyebrow">Team Members &amp; Vacancies</p>
+        <h1>The people behind the lab</h1>
+      </div>
     </section>
 
-    <section>
-      <h2>Open Positions</h2>
-      <p>
-        The MODES Lab does not currently have any open positions. We anticipate potential
-        openings for graduate students and other trainees beginning in Summer 2026.
-        Individuals interested in future opportunities are welcome to get in touch.
-      </p>
-      <p>
-        Research in the MODES Lab spans computational and data-driven work as well as
-        molecular, microbiological, and field-based research. We value curiosity,
-        willingness to engage across disciplines, and interest in collaborative,
-        systems-oriented research.
-      </p>
-    </section>
+    <section class="section">
+      <div class="wrap narrow stack-lg">
+        <article class="person-card">
+          <div class="person-avatar">DW</div>
+          <div>
+            <h2>Daniel Weller</h2>
+            <p class="role">Ad Astra Professor of Agri-Food System Analytics</p>
+            <p>Research spanning food safety, epidemiology, microbial ecology, environmental surveillance, and quantitative approaches for more sustainable and equitable agri-food systems.</p>
+            <p><a href="mailto:wellerd2@gmail.com">wellerd2@gmail.com</a></p>
+          </div>
+        </article>
 
-    <section>
-      <h2>Collaborators</h2>
-      <p>Collaborator information can be added here as the group grows.</p>
+        <article class="content-block">
+          <h2>Open positions</h2>
+          <p>The MODES Lab does not currently have any open positions. Potential openings for graduate students and other trainees can be added here as they arise.</p>
+          <p>Prospective collaborators or trainees with interests in quantitative, field-based, microbiological, or systems-oriented agri-food research are welcome to get in touch.</p>
+        </article>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div><p class="footer-title">MODES Lab</p></div>
+      <div><p><a href="mailto:wellerd2@gmail.com">wellerd2@gmail.com</a></p></div>
+    </div>
+  </footer>
 </body>
 </html>

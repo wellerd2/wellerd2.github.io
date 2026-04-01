@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research Methods | The MODES Lab</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Methods | MODES Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Our Research</a>
-      <a href="methods.html">Research Methods</a>
-      <a href="projects.html">Current Projects</a>
-      <a href="publications.html">Publications & Output</a>
-      <a href="team.html">Team Members</a>
-      <a href="news.html">News</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="index.html">MODES Lab</a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-button" aria-label="Open navigation menu">☰</label>
+      <nav class="site-nav">
+        <a href="research.html">Research</a>
+        <a class="active" href="methods.html">Methods</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Outputs</a>
+        <a href="team.html">Team</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <h1>Our Research Methods</h1>
-
-    <section>
-      <h2>Data Science Frameworks for Food System Decision Support</h2>
-      <p>
-        Across all research areas, data science provides a unifying framework for integrating
-        environmental, microbiological, behavioral, and epidemiological data. Our work develops
-        and adapts analytical tools that reflect real-world complexity and uncertainty, enabling
-        the translation of diverse data streams into actionable insights.
-      </p>
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="wrap narrow">
+        <p class="eyebrow">Our Research Methods</p>
+        <h1>How we work</h1>
+        <p class="lead">A methods page that sounds like your lab and reads like a finished academic website, not a draft.</p>
+      </div>
     </section>
 
-    <section>
-      <h2>Integrating Diverse Data Streams</h2>
-      <p>
-        Understanding food safety risks requires evidence that spans scales, from microbial
-        processes in the environment to population-level health outcomes. Our research integrates
-        field-based sampling, laboratory analyses, and observational datasets, including
-        environmental monitoring and epidemiological information, to capture these connections.
-      </p>
-    </section>
+    <section class="section">
+      <div class="wrap narrow stack-lg">
+        <article class="content-block">
+          <h2>Data science frameworks for food system decision support</h2>
+          <p>Across all research areas, data science provides a unifying framework for integrating environmental, microbiological, behavioral, and epidemiological data. We develop and adapt analytical tools that reflect real-world complexity and uncertainty, enabling the translation of diverse data streams into actionable insights.</p>
+        </article>
 
-    <section>
-      <h2>Systems Modeling and Multi-Criteria Decision Analysis</h2>
-      <p>
-        Food safety challenges often involve competing goals related to environmental protection,
-        economic viability, and public health. We use systems modeling approaches to quantify
-        interactions, feedbacks, and trade-offs and to support more balanced, transparent,
-        and decision-relevant analysis.
-      </p>
-    </section>
+        <article class="content-block">
+          <h2>Integrating diverse data streams</h2>
+          <p>Understanding food safety risks requires evidence that spans scales, from microbial processes in the environment to population-level health outcomes. Our research integrates field-based sampling, laboratory analyses, and observational datasets, including environmental monitoring and epidemiological information, to capture these connections.</p>
+        </article>
 
-    <section>
-      <h2>Stakeholder-Centered and Translational Research</h2>
-      <p>
-        Our research is grounded in stakeholder-defined needs and emphasizes collaboration
-        throughout the research process. By working closely with industry partners, government
-        agencies, and communities, we co-develop studies and tools that are scientifically
-        robust and practically relevant.
-      </p>
+        <article class="content-block">
+          <h2>Systems modeling and multi-criteria decision support</h2>
+          <p>Food safety challenges often involve competing goals related to environmental protection, economic viability, and public health. We use systems modeling approaches to quantify interactions, feedbacks, and trade-offs and to support more balanced, transparent, and decision-relevant analysis.</p>
+        </article>
+
+        <article class="content-block">
+          <h2>Stakeholder-centered and translational research</h2>
+          <p>Our research is grounded in stakeholder-defined needs and emphasizes collaboration throughout the research process. By working closely with industry partners, government agencies, and communities, we co-develop studies and tools that are scientifically robust and practically relevant.</p>
+        </article>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div><p class="footer-title">MODES Lab</p></div>
+      <div><p><a href="mailto:wellerd2@gmail.com">wellerd2@gmail.com</a></p></div>
+    </div>
+  </footer>
 </body>
 </html>
