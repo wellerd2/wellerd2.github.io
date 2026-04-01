@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="840" viewBox="0 0 700 840" role="img" aria-labelledby="title desc">
+<title id="title">Portrait placeholder</title>
+<desc id="desc">Neutral placeholder portrait card for Daniel Weller.</desc>
+<rect width="700" height="840" fill="#eef1ec"/>
+<rect x="70" y="70" width="560" height="700" rx="24" fill="#f8f8f5" stroke="#d9ddd8" stroke-width="4"/>
+<circle cx="350" cy="280" r="120" fill="#d8dfd6"/>
+<path d="M190 610 C230 490, 470 490, 510 610 L510 700 L190 700 Z" fill="#c2cdc4"/>
+<text x="350" y="745" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#5e6862">Replace with headshot</text>
+</svg>

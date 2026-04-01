@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" role="img">
+<rect width="900" height="640" fill="#eef1ec"/>
+<rect x="70" y="90" width="760" height="460" rx="24" fill="#f9faf8" stroke="#d9ddd8" stroke-width="4"/>
+<rect x="140" y="320" width="180" height="110" fill="#a17148"/>
+<rect x="360" y="320" width="180" height="110" fill="#a17148"/>
+<rect x="580" y="320" width="180" height="110" fill="#a17148"/>
+<rect x="160" y="280" width="140" height="45" fill="#76936d"/>
+<rect x="380" y="280" width="140" height="45" fill="#76936d"/>
+<rect x="600" y="280" width="140" height="45" fill="#76936d"/>
+<rect x="110" y="200" width="80" height="120" fill="#c5d0c6"/>
+<rect x="210" y="160" width="90" height="160" fill="#b4c2b6"/>
+<rect x="680" y="150" width="85" height="170" fill="#c5d0c6"/>
+<text x="450" y="525" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#5e6862">Replace with urban farm or fieldwork image</text>
+</svg>
