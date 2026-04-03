@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Microbial Ecology and Environmental Drivers of Food Safety | Publications</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-title" href="index.html">
+        <img src="images/modes-logo.png" alt="MODES Lab logo">
+        <span>The MODES Lab</span>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <header class="page-header">
+      <h1>Microbial Ecology and Environmental Drivers of Food Safety</h1>
+    </header>
+
+    <div class="content-block">
+      <ol class="publication-list">
+        <li>Chevez, Z., E. Tobar, D. Weller, and C. Rodrigues. Longitudinal study of environmental factors associated with pathogen contamination of Alabama ponds: implications for qualitative risk assessment. Journal of Food Protection. 88 (7): 100552.</li>
+        <li>Etaka, C. °, D. Weller, T. Le, A. Hamilton, F. Critzer, and L. Strawn. Impact of material type and relative humidity on the survival of E. coli, Listeria monocytogenes, and Salmonella enterica on harvest bags. 2025. Journal of Food Protection. 88(5) 100471.</li>
+        <li>Murphy, C. °, D. Weller, T. Love, M. Danyluk and L. Strawn. 2025. The probability of detecting host-specific microbial source-tracking markers in surface waterways was strongly associated with the methods chosen for sample collection and marker detection. Microbiology Spectrum: 13(2): 0197224.</li>
+        <li>Murphy, C. °, D. Weller, C. Bardsley °, D. Ingram, Y. Chen, D. Oryang, S. Rideout, and L. Strawn. 2024. Survival of twelve pathogenic and generic Escherichia coli strains in agricultural soils as influence by strain, soil type, irrigation regimen and soil amendment. Journal of Food Protection: in-press.</li>
+        <li>Murphy, C. °, D. Weller, and L. Strawn. 2024. Scale and detection method impacted Salmonella presence and diversity in ponds. Science of the Total Environment (907): 167812.</li>
+        <li>Cook, C., C.  Diekman, D. Weller, C. Murphy, A. Hamilton, M. Ponder, R. Boyer, S. Rideout, R. Maguire, M. Danyluk, and L. Strawn. 2023. Factors associated with foodborne pathogens and indicator organisms in agricultural soils. Frontiers in Sustainable Food Systems. 7: e-print.</li>
+        <li>Murphy, C. °, D. Weller, and L. Strawn. 2023. Salmonella prevalence was strongly associated with spatial factors, while Listeria monocytogenes prevalence was strongly associated with temporal factors on Virginia produce farms. Applied and Environmental Microbiology (89): e01529-22.</li>
+        <li>Murphy, C. °, D. Weller, R. Ovissipour, R. Boyer, and L. Strawn. 2023. Spatial versus non-spatial variance in fecal indicator bacteria differs within and between ponds. Journal of Food Protection (86): 10045.</li>
+        <li>Diaz-Gavidia, C., C. Barria, D. Weller, M. Salgado-Caxito, E. Estrada, A. Araya, L. F. Vera. W. Smith, M. Kim, A. Moreno-Switt, J. Olivares Pacheco, and A. Adell. 2022. Humans and hoofed livestock are the main sources of fecal contamination of rivers used for crop irrigation: a microbial source tracking approach. Frontiers in Microbiology, 13: e-print..</li>
+        <li>°Murphy, C., T. Chapin, R. McEgan, S. Reddy, L. Freidrich, L. Goodridge, D. Weller, L. Strawn, K. Schneider, and M. Danyluk. 2022. Factors associated with E. coli levels in and Salmonella contamination of agricultural water differed between north and south Florida waterways. Frontiers in Water (3): 172.</li>
+        <li>°Murphy, C., D. Weller, M. Reiter, °C. Bardsley, J. Eifert, M. Ponder, S. Rideout, and L. Strawn. 2022. Anaerobic soil disinfestation, amendment-type, and irrigation regiment influence Salmonella survival and die-off in agricultural soils. Journal of Applied Microbiology (132): 2342-2354.</li>
+        <li>Toro, M., D. Weller, R. Ramos, L. Diaz, F. Alvarez, A. Reyes-Jara, A. Moreno-Switt, J. Meng, and A. Adell. 2022.  Environmental and anthropogenic factors associated with the likelihood of detecting Salmonella in Chilean agricultural watersheds. Environmental Pollution. 306: e119298.</li>
+        <li>°Bardsley, C., D. Weller, D. Ingram, Y. Chan, D. Oryang, J. van Doren, S. Rideout, and L. Strawn. 2021. Soil type, irrigation regime, strain, and soil amendment influence Salmonella survival in agricultural soils. 2021. Frontiers in Microbiology (12): 590303.</li>
+        <li>Green, H., M. Wilder, M. Wiedmann, and D. Weller. 2021. Integrative survey of 68 non-overlapping Western New York watersheds reveals stream and landscape features associated with fecal contamination. Frontiers in Microbiology (12): 684533.</li>
+        <li>Weller, D., °C. Murphy, S. Johnson, H. Green, E. Michalenko, T. Love, and L. Strawn. 2021. Land use, weather and water quality factors are associated with fecal contamination of Northeastern streams that span an urban-rural gradient. Frontiers in Water (3): 173.</li>
+        <li>°Belias, A., L. Strawn, M. Wiedmann and D. Weller. Small produce farm environments can harbor diverse Listeria monocytogenes and Listeria spp. populations. Journal of Food Protection (84): 1.</li>
+        <li>°Belias, A., A. Sbodio, P. Truchado, D. Weller, J. Pinzon, M. Skots, A. Allende, D. Munther, T. Suslow, M. Wiedmann, and R. Ivanek. 2020. Effect of weather on the die-off of Escherichia coli and attenuated Salmonella Typhimurium on preharvest baby lettuce and spinach following a simulated irrigation event with contaminated water in California, New York, and Spain. Applied and Environmental Microbiology (86): e00899-20.</li>
+        <li>°Harrand, S., L. Strawn, O. Illas-Ortiz, M. Wiedmann, and D. Weller*. 2020. Listeria monocytogenes prevalence varies more within field than between fields or over time on conventionally farmed New York produce fields. Journal of Food Protection (83): 1958-1966.</li>
+        <li>Weller, D. *, °A. Belias, H. Green, S. Roof, and M. Wiedmann. 2020. Landscape, water quality, and weather factors associated with an increased likelihood of foodborne pathogen contamination of New York streams used to source water for produce production. Frontiers in Sustainable Food Systems. (3) 124.</li>
+        <li>Weller, D. *, °L. Saylor, and P. Turkon. 2020. Total coliform and generic E. coli levels, and Salmonella presence in eight experimental aquaponics and hydroponics systems: a brief report highlighting exploratory data. Horticulturae. (6): 42.</li>
+        <li>Green, H., D. Weller, S. Johnson, and E. Michalenko. 2019. Microbial source tracking reveals origins of fecal contamination in a recovering watershed. Water (11): 2162.</li>
+        <li>Weller, D., J. Kovac, S. Roof, D. Kent, °J. Tokman, E. Mudrak, B. Kowalcyk, D. Oryang, A. Aceituno, and M. Wiedmann. 2017. Escherichia coli transfer from simulated wildlife feces to lettuce during foliar irrigation: a field study in the Northeastern United States. Journal of Food Microbiology. (68) 24-33.</li>
+        <li>Weller, D., J. Kovac, S. Roof, D. Kent, °J. Tokman, B. Kowalcyk, D. Oryang, R. Ivanek, A. Aceituno, C. Sroka, and M. Wiedmann. 2017. Survival of Escherichia coli on lettuce under field conditions encountered in the Northeastern United States. Journal of Food Protection. (80) 1214-1221.</li>
+        <li>Weller, D., M. Wiedmann, and L. Strawn. 2015. Spatial and temporal factors associated with Listeria monocytogenes contamination of spinach fields in New York State. Applied and Environmental Microbiology. (81) 6059-6069.</li>
+        <li>Weller, D., M. Wiedmann, and L. Strawn. 2015. Irrigation is significantly associated with an increased prevalence of Listeria monocytogenes in produce production environments in New York State. Journal of Food Protection. (78) 1132-1141.</li>
+      </ol>
+    </div>
+  </main>
+</body>
+</html>
