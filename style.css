@@ -1,14 +1,15 @@
 
 :root {
-  --ink: #18224a;
-  --ink-soft: #30406f;
-  --text: #1f2430;
-  --muted: #5d667a;
-  --line: #d9deea;
+  --ink: #1b2845;
+  --ink-soft: #43556a;
+  --text: #202733;
+  --muted: #5e6b63;
+  --line: #d5ddd1;
   --panel: #ffffff;
-  --panel-soft: #f6f8fc;
+  --panel-soft: #eef3ea;
   --accent: #98bf42;
-  --shadow: 0 8px 24px rgba(24, 34, 74, 0.06);
+  --bg: #f3f7f0;
+  --shadow: 0 10px 28px rgba(27, 40, 69, 0.06);
   --radius: 18px;
   --max: 1120px;
 }
@@ -23,7 +24,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text);
-  background: #fbfcff;
+  background: var(--bg);
   line-height: 1.65;
 }
 
@@ -33,8 +34,12 @@ a:hover { color: var(--ink-soft); }
 img { max-width: 100%; display: block; }
 
 .site-header {
-  background: rgba(251, 252, 255, 0.98);
-  border-bottom: 1px solid rgba(217, 222, 234, 0.9);
+  background: rgba(243, 247, 240, 0.96);
+  border-bottom: 1px solid rgba(213, 221, 209, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
 }
 
 .nav-wrap {
@@ -42,7 +47,7 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
   padding: 10px 24px;
   display: flex;
-  gap: 20px;
+  gap: 18px;
   align-items: center;
   justify-content: space-between;
 }
@@ -51,10 +56,11 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   text-decoration: none;
+  flex: 0 0 auto;
 }
 
 .site-title img {
-  height: 28px;
+  height: 22px;
   width: auto;
   display: block;
 }
@@ -75,13 +81,13 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 8px 12px;
+  gap: 8px 10px;
 }
 
 .site-nav a {
   text-decoration: none;
   color: var(--text);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   padding: 6px 8px;
   border-radius: 8px;
 }
@@ -95,22 +101,21 @@ img { max-width: 100%; display: block; }
 .page-shell {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 34px 24px 64px;
+  padding: 26px 24px 56px;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 28px;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 24px;
   align-items: stretch;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .hero-panel,
 .page-panel,
 .content-block,
-.page-header,
-.contact-logo-panel {
+.page-header {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -118,42 +123,34 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-panel {
-  padding: 34px 34px 30px;
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-panel h1,
 .page-header h1 {
-  margin: 0 0 8px;
-  color: var(--ink);
-  font-size: clamp(1.85rem, 3vw, 2.45rem);
-  line-height: 1.12;
-}
-
-.home-hero h1 {
-  font-size: clamp(1.5rem, 2.2vw, 1.95rem);
-}
-
-.tagline {
-  margin: 0 0 18px;
-  color: var(--ink-soft);
-  font-weight: 700;
-  font-size: clamp(1rem, 2vw, 1.18rem);
-  letter-spacing: 0.02em;
-}
-
-.lead,
-.page-intro {
   margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  line-height: 1.15;
+  text-align: center;
+}
+
+.lead {
+  margin: 16px auto 0;
   color: var(--text);
-  max-width: 62ch;
-  font-size: 1.05rem;
+  max-width: 60ch;
+  font-size: 1.02rem;
 }
 
 .hero-actions {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 22px;
 }
 
 .button {
@@ -177,8 +174,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-aside img,
-.content-image,
-.profile-image {
+.content-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -188,7 +184,7 @@ img { max-width: 100%; display: block; }
 }
 
 .page-panel {
-  padding: 32px;
+  padding: 28px 30px;
 }
 
 .page-panel > p:first-child {
@@ -199,7 +195,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-  margin-top: 24px;
+  margin-top: 22px;
 }
 
 .quick-links a {
@@ -209,7 +205,7 @@ img { max-width: 100%; display: block; }
   background: var(--panel-soft);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 18px 18px 16px;
+  padding: 16px 16px 14px;
 }
 
 .quick-links a strong {
@@ -218,40 +214,52 @@ img { max-width: 100%; display: block; }
   margin-bottom: 4px;
 }
 
+.quick-links a span {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .page-header {
-  padding: 30px 32px;
-  margin-bottom: 22px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
 }
 
 .stack {
   display: grid;
-  gap: 18px;
+  gap: 16px;
 }
 
 .content-block {
-  padding: 28px 30px;
+  padding: 24px 28px;
 }
 
 .content-block h2 {
   margin: 0 0 10px;
   color: var(--ink);
-  font-size: 1.3rem;
+  font-size: 1.22rem;
 }
 
 .content-block p:last-child,
-.content-block ul:last-child {
+.content-block ul:last-child,
+.content-block ol:last-child {
   margin-bottom: 0;
+}
+
+.project-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+  align-items: start;
 }
 
 .project-image {
   width: 100%;
-  max-height: 320px;
-  height: auto;
+  max-height: 240px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center;
-  margin-top: 18px;
+  align-self: start;
 }
-
 
 .link-list,
 .publication-list,
@@ -265,26 +273,30 @@ img { max-width: 100%; display: block; }
   margin-bottom: 14px;
 }
 
-.project-title {
-  margin-bottom: 8px;
+.meta {
+  color: var(--muted);
+  font-size: 0.94rem;
 }
 
-.contact-logo-panel {
-  margin-top: 22px;
-  padding: 28px;
-  text-align: center;
+.profile-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  align-items: start;
 }
 
-.contact-logo {
-  max-width: 420px;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
+.profile-image {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
 .site-footer {
-  margin-top: 28px;
-  padding-top: 20px;
+  margin-top: 26px;
+  padding-top: 18px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   display: flex;
@@ -300,19 +312,25 @@ img { max-width: 100%; display: block; }
   }
 
   .hero,
-  .quick-links {
+  .quick-links,
+  .project-layout,
+  .profile-grid {
     grid-template-columns: 1fr;
   }
 
   .hero-panel {
-    padding: 34px 28px 30px;
+    padding: 24px 22px;
   }
 
   .page-panel,
   .page-header,
-  .content-block,
-  .contact-logo-panel {
+  .content-block {
     padding-left: 22px;
     padding-right: 22px;
+  }
+
+  .profile-image {
+    width: 92px;
+    height: 92px;
   }
 }
