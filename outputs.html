@@ -4,49 +4,149 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Outputs | The MODES Lab</title>
-  <meta name="description" content="MODES Lab outputs">
+  <meta name="description" content="Datasets, code, tools, extension materials, and other outputs from the MODES Lab">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header">
+  <header class="site-header">
     <div class="nav-wrap">
       <a class="site-title" href="index.html">
         <img src="images/modes-logo.png" alt="MODES Lab logo">
-        <span class="visually-hidden">The MODES Lab</span>
+        <span>The MODES Lab</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a><a href="research.html">Research</a><a href="methods.html">Methods</a><a href="projects.html">Projects</a><a href="publications.html">Publications</a><a href="outputs.html" aria-current="page">Outputs</a><a href="team.html">Team</a><a href="news.html">News</a><a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="methods.html">Methods</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="outputs.html" aria-current="page">Outputs</a>
+        <a href="team.html">Team</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
-  <main class="page-shell">
 
+  <main class="page-shell">
     <header class="page-header">
       <h1>Outputs</h1>
     </header>
 
-    <section class="stack">
-      <article class="content-block">
-        <h2>Reports and Public Health Outputs</h2>
-        <ul class="link-list">
-          <li><a href="https://www.cdc.gov/ifsac/php/data-research/annual-report-2023.html" target="_blank" rel="noopener">Interagency Food Safety Analytics Collaboration (IFSAC) Annual Report, 2023</a></li>
-        </ul>
-      </article>
-
-      <article class="content-block">
-        <h2>Code and Repositories</h2>
-        <ul class="link-list">
-          <li><a href="https://github.com/wellerd2" target="_blank" rel="noopener">Daniel Weller on GitHub</a></li>
-        </ul>
-      </article>
-
+    <div class="stack">
       <article class="content-block">
         <h2>Datasets</h2>
-        <p>
-          Datasets associated with current and future MODES Lab projects can be added here as they become publicly available.
-        </p>
+        <ul class="link-list">
+          <li>
+            <a href="https://huggingface.co/food-ai-nexus" target="_blank" rel="noopener">
+              Food AI Nexus
+            </a><br>
+            Food AI Nexus is an open science initiative led by Cornell University, with dataset contributions from researchers at Virginia Tech and Michigan State University. Its mission is to curate and host high-quality, publicly available datasets and models dedicated to solving critical challenges in food safety and public health.
+          </li>
+          <li>
+            <a href="https://github.com/wellerd2/Green-et-al.-2021-Datasets" target="_blank" rel="noopener">
+              Predicting Agricultural Water Quality (PAWQ) Project Datasets
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/USEPA/PilotWatershed_NARMS_culture-based" target="_blank" rel="noopener">
+              National Surface Water Antimicrobial Resistance Monitoring System Pilot Study – East Fork Watershed Data, Code, and RShiny Application
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/wellerd2/Weller-et-al-2024-AEM-Datasets" target="_blank" rel="noopener">
+              Surface Water Quality Database
+            </a>
+          </li>
+        </ul>
       </article>
-    </section>
+
+      <article class="content-block">
+        <h2>Code</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://github.com/wellerd2/epi-toolbox-r" target="_blank" rel="noopener">
+              Epi-R Toolbox
+            </a><br>
+            epi-toolbox-r is a collection of helper functions for working with epidemiologic and surveillance data, as well as utilities for loading and managing data files in R and formatting analytical outputs for visualization.
+          </li>
+          <li>
+            <a href="https://github.com/wellerd2/Ecoli-transfer-and-survival" target="_blank" rel="noopener">
+              Most Probable Number Enumeration
+            </a><br>
+            This code is an implementation of the method described in Cochran 1950. It includes a function to determine the most probable number of bacteria in a given sample based on a specific pattern of positive tubes and replicates. This code was initially published as part of the supplemental material of Weller et al. 2017 and was developed by David Kent and Daniel Weller.
+          </li>
+          <li>
+            <a href="https://github.com/CDCgov/FoodNetTrends" target="_blank" rel="noopener">
+              Implementing the FoodNet Trends Bayesian Splines Model
+            </a><br>
+            Weller, D., S. Sevilla, E. Rose, J. Forstedt, J. Caravas, and B. Bruce. 2025. Implementing the FoodNet Trends Bayesian splines model.
+          </li>
+          <li>
+            <a href="https://github.com/wellerd2/Ecoli-transfer-and-survival" target="_blank" rel="noopener">
+              E. coli Transfer and Survival
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/wellerd2/Calculating-land-use-land-cover-and-landscape-structure-parameters" target="_blank" rel="noopener">
+              Calculating Land Use, Land Cover, and Landscape Structure Parameters
+            </a><br>
+            This code calculates the proportion of each land cover class, including cropland, pasture, forest-wetland, shrubland, grassland, barren, open water, developed open space, and developed land, as well as impervious cover around each river, lake, pond, or other sampling site using buffers of 122, 366, and 1098 meters. Buffer distances were selected based on LGMA recommended distances from adjacent land uses likely to present a food safety risk.
+          </li>
+          <li>
+            <a href="https://github.com/wellerd2/lavaan_helper_functions" target="_blank" rel="noopener">
+              lavaan Helper Functions
+            </a><br>
+            This repository provides helper functions to label all structural regression coefficients in a lavaan model using Excel-style labels, build the corresponding directed regression graph, and define direct, indirect, and total effects for selected outcomes by enumerating all directed paths.
+          </li>
+          <li>
+            <a href="https://github.com/wellerd2/AVF-replication-1" target="_blank" rel="noopener">
+              AVF Replication Analysis
+            </a><br>
+            The files in this repository allow replication of the results for “Preharvest food safety and conservation challenges facing US produce growers: Results from a national survey.”
+          </li>
+        </ul>
+      </article>
+
+      <article class="content-block">
+        <h2>Tools</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://github.com/wellerd2/urban-farm-metal-contamination-workflow" target="_blank" rel="noopener">
+              Urban Farm Metal Contamination Workflow
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/wellerd2/SentinelScenarios" target="_blank" rel="noopener">
+              Sentinel Scenarios
+            </a>
+          </li>
+        </ul>
+      </article>
+
+      <article class="content-block">
+        <h2>Extension Materials</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://foodsafetyclearinghouse.org/resources/water-clarity-need-standardized-data-collection-and-methods-assessing-and-managing-water" target="_blank" rel="noopener">
+              The need for standardized data collection and methods for assessing and managing water quality
+            </a><br>
+            Food Safety Resource Clearinghouse.
+          </li>
+        </ul>
+      </article>
+
+      <article class="content-block">
+        <h2>Reports and Other Outputs</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://www.cdc.gov/ifsac/php/data-research/annual-report-2023.html" target="_blank" rel="noopener">
+              Interagency Food Safety Analytics Collaboration Annual Report, 2023
+            </a>
+          </li>
+        </ul>
+      </article>
+    </div>
 
     <footer class="site-footer">
       <div>© 2026 Daniel Weller, PhD</div>
