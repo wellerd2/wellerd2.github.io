@@ -334,3 +334,35 @@ img { max-width: 100%; display: block; }
     height: 92px;
   }
 }
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.hub-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.hub-card:hover {
+  background: #eef4e8;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .hub-grid {
+    grid-template-columns: 1fr;
+  }
+}
