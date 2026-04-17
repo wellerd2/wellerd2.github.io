@@ -60,7 +60,7 @@ img { max-width: 100%; display: block; }
 }
 
 .site-title img {
-  height: 28px;
+  height: 22px;
   width: auto;
   display: block;
 }
@@ -415,4 +415,68 @@ img { max-width: 100%; display: block; }
   color: var(--muted);
   font-size: 0.92rem;
   font-weight: 700;
+}
+
+
+
+.site-title img {
+  height: 28px;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.research-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+}
+
+.research-card h2 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 1.18rem;
+}
+
+.project-flow img.project-image-inline {
+  width: 42%;
+  max-width: 360px;
+  float: right;
+  margin: 0 0 14px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.project-flow::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.contact-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 900px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-flow img.project-image-inline {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 16px 0;
+  }
 }
