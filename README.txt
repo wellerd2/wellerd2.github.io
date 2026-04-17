@@ -13,4 +13,5 @@ To add your own images:
 2. Keep the same filename to avoid changing HTML, or update the filename in the relevant HTML page.
 
 
-Updated package excludes Methods from navigation; methods.html was retired and is not included here.
+Additional image needed for contact page:
+- contact-hero.jpg
