@@ -14,13 +14,13 @@
 }
 
 *,:before,:after{box-sizing:border-box}
- html{scroll-behavior:smooth}
+html{scroll-behavior:smooth}
 
 body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
 
 a{color:var(--ink)}
- a:hover{color:var(--ink-soft)}
- img{max-width:100%;display:block}
+a:hover{color:var(--ink-soft)}
+img{max-width:100%;display:block}
 
 .site-header{background:rgba(243,247,240,.96);border-bottom:1px solid rgba(213,221,209,.95);position:sticky;top:0;z-index:10;backdrop-filter:blur(8px)}
 
@@ -48,15 +48,15 @@ a{color:var(--ink)}
 
 .button{
   display:inline-flex;
-  justify-content:center;   /* horizontal centering */
-  align-items:center;       /* vertical centering */
+  justify-content:center;
+  align-items:center;
   text-decoration:none;
   border-radius:999px;
   padding:10px 16px;
   font-weight:700;
   border:1px solid var(--line);
   min-width:160px;
-  text-align:center;
+  text-align:center
 }
 .button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
 .button.secondary{background:#fff;color:var(--ink)}
@@ -67,7 +67,7 @@ a{color:var(--ink)}
 .page-panel{padding:28px 30px}
 .quick-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
 .quick-links a{display:block;text-decoration:none;color:var(--text);background:var(--panel-soft);border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px}
-.quick-links a strong{display:block;color:var(--ink);margin-bottom:4px}
+.quick-links a strong{display:block;color:var(--ink);margin-bottom:4px;text-align:center}
 
 .page-header{padding:24px 28px;margin-bottom:20px}
 .stack{display:grid;gap:16px}
@@ -105,14 +105,124 @@ a{color:var(--ink)}
 .trainee-card h3{margin:0 0 8px;color:var(--ink);font-size:1.08rem}
 .image-placeholder{display:flex;align-items:center;justify-content:center;background:var(--panel-soft);color:var(--muted);font-size:.92rem;font-weight:700}
 
-@media (max-width:980px){.hero,.contact-split,.research-grid,.quick-links,.hub-grid,.profile-grid{grid-template-columns:1fr}
-.research-card.full-row,.hub-card.full-row{grid-column:auto;max-width:none;width:auto;justify-self:stretch}
-.project-wrap img{float:none;width:100%;max-width:100%;margin:0 0 16px 0}
+/* ------------------------------------------------------------ */
+/* COLLABORATIONS PAGE / LEAFLET MAP                            */
+/* ------------------------------------------------------------ */
+
+.map-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
 }
 
-@media (max-width:900px){.nav-wrap{align-items:flex-start;flex-direction:column}
-.hero-panel{padding:24px 22px}
-.page-panel,.page-header,.content-block,.project-feature{padding-left:22px;padding-right:22px}
-.profile-image{width:96px;height:96px}
+.map-panel h2 {
+  margin-top: 0;
+  color: var(--ink);
+  text-align: center;
 }
 
+.map-panel p {
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.world-map {
+  width: 100%;
+  height: 560px;
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.leaflet-container {
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Larger, more visible markers */
+.custom-location-marker {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.85);
+}
+
+/* Dublin / current base */
+.custom-location-marker.dublin {
+  background: #fad239;
+}
+
+/* Current and past affiliations */
+.custom-location-marker.affiliation {
+  background: #6bbe51;
+}
+
+/* Collaborators */
+.custom-location-marker.other {
+  background: #007db8;
+}
+
+.leaflet-popup-content {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.35;
+}
+
+.map-legend {
+  margin-top: 14px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+}
+
+.map-legend .legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.map-legend .dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.85);
+}
+
+.map-legend .dot.dublin {
+  background: #fad239;
+}
+
+.map-legend .dot.affiliation {
+  background: #6bbe51;
+}
+
+.map-legend .dot.other {
+  background: #007db8;
+}
+
+@media (max-width:980px){
+  .hero,.contact-split,.research-grid,.quick-links,.hub-grid,.profile-grid{grid-template-columns:1fr}
+  .research-card.full-row,.hub-card.full-row{grid-column:auto;max-width:none;width:auto;justify-self:stretch}
+  .project-wrap img{float:none;width:100%;max-width:100%;margin:0 0 16px 0}
+}
+
+@media (max-width:900px){
+  .nav-wrap{align-items:flex-start;flex-direction:column}
+  .hero-panel{padding:24px 22px}
+  .page-panel,.page-header,.content-block,.project-feature,.map-panel{padding-left:22px;padding-right:22px}
+  .profile-image{width:96px;height:96px}
+}
+
+@media (max-width:700px){
+  .world-map{height:440px}
+}
