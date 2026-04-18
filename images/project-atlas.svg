@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" role="img">
-<rect width="900" height="640" fill="#eef1ec"/>
-<rect x="60" y="70" width="780" height="500" rx="24" fill="#f9faf8" stroke="#d9ddd8" stroke-width="4"/>
-<path d="M140 150 C250 120, 320 170, 390 150 S550 120, 620 180 S760 260, 720 420" fill="none" stroke="#89a392" stroke-width="22" stroke-linecap="round"/>
-<g fill="#5f7568"><circle cx="210" cy="220" r="14"/><circle cx="340" cy="210" r="14"/><circle cx="500" cy="205" r="14"/><circle cx="610" cy="265" r="14"/><circle cx="675" cy="380" r="14"/></g>
-<text x="450" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#5e6862">Replace with map, field, or surveillance image</text>
-</svg>
