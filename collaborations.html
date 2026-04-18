@@ -119,10 +119,9 @@
     </header>
 
     <section class="map-panel">
-      <h2>Global Collaborations</h2>
+      <h2>Collaborations</h2>
       <p>
-        This map shows collaboration locations using the same marker style across sites.
-        Dublin is highlighted in forest green. All other locations are shown in black.
+        This map shows collaborator locations, with University College Dublin (Dublin) highlighted in yellow, current and former affiliations in green, and collaborators in blue.
       </p>
 
       <!-- MAP CONTAINER -->
@@ -185,7 +184,7 @@
         name: "Rochester, New York, USA",
         lat: 43.1566,
         lng: -77.6088,
-        type: "other"
+        type: "affiliation"
       },
       /* MARKER END: Rochester */
 
@@ -194,7 +193,7 @@
         name: "Blacksburg, Virginia, USA",
         lat: 37.2296,
         lng: -80.4139,
-        type: "other"
+        type: "affiliation"
       },
       /* MARKER END: Blacksburg */
 
@@ -203,10 +202,211 @@
         name: "Atlanta, Georgia, USA",
         lat: 33.7490,
         lng: -84.3880,
-        type: "other"
+        type: "affiliation"
       }
       /* MARKER END: Atlanta */
 
+      /* MARKER START: Ithaca */
+      {
+        name: "Ithaca, New York, USA",
+        lat: 42.45, -76.51
+        lng: -84.3880,
+        type: "affiliation"
+      }
+      /* MARKER END: Ithaca */
+    const collaborationLocations = [
+
+  /* MARKER START: Ithaca */
+  {
+    name: "Ithaca, New York, USA",
+    lat: 42.45,
+    lng: -76.51,
+    type: "affiliation"
+  },
+  /* MARKER END: Ithaca */
+
+  /* MARKER START: Santiago */
+  {
+    name: "Santiago, Chile",
+    lat: -33.4489,
+    lng: -70.6693,
+    type: "other"
+  },
+  /* MARKER END: Santiago */
+
+  /* MARKER START: Seychelles */
+  {
+    name: "Seychelles",
+    lat: -4.6796,
+    lng: 55.4920,
+    type: "other"
+  },
+  /* MARKER END: Seychelles */
+
+  /* MARKER START: Guelph */
+  {
+    name: "Guelph, Ontario, Canada",
+    lat: 43.5448,
+    lng: -80.2482,
+    type: "other"
+  },
+  /* MARKER END: Guelph */
+
+  /* MARKER START: Kingston */
+  {
+    name: "Kingston, Rhode Island, USA",
+    lat: 41.4804,
+    lng: -71.5312,
+    type: "other"
+  },
+  /* MARKER END: Kingston */
+
+  /* MARKER START: Pasco */
+  {
+    name: "Pasco, Washington, USA",
+    lat: 46.2396,
+    lng: -119.1006,
+    type: "other"
+  },
+  /* MARKER END: Pasco */
+
+  /* MARKER START: UC Davis */
+  {
+    name: "Davis, California, USA",
+    label: "University of California, Davis",
+    lat: 38.5449,
+    lng: -121.7405,
+    type: "other"
+  },
+  /* MARKER END: UC Davis */
+
+  /* MARKER START: Maricopa */
+  {
+    name: "Maricopa, Arizona, USA",
+    label: "University of Arizona",
+    lat: 33.0581,
+    lng: -112.0476,
+    type: "other"
+  },
+  /* MARKER END: Maricopa */
+
+  /* MARKER START: Denver */
+  {
+    name: "Denver, Colorado, USA",
+    label: "Colorado State University",
+    lat: 39.7392,
+    lng: -104.9903,
+    type: "other"
+  },
+  /* MARKER END: Denver */
+
+  /* MARKER START: State College */
+  {
+    name: "State College, Pennsylvania, USA",
+    lat: 40.7934,
+    lng: -77.8600,
+    type: "other"
+  },
+  /* MARKER END: State College */
+
+  /* MARKER START: Washington DC */
+  {
+    name: "Washington, DC, USA",
+    lat: 38.9072,
+    lng: -77.0369,
+    type: "other"
+  },
+  /* MARKER END: Washington DC */
+
+  /* MARKER START: Auburn */
+  {
+    name: "Auburn, Alabama, USA",
+    lat: 32.6099,
+    lng: -85.4808,
+    type: "other"
+  }
+  /* MARKER END: Auburn */
+  /* MARKER START: CEBAS Spain */
+{
+  name: "Murcia, Spain",
+  label: "CEBAS-CSIC",
+  lat: 37.9922,
+  lng: -1.1307,
+  type: "other"
+},
+/* MARKER END: CEBAS Spain */
+
+/* MARKER START: Gainesville */
+{
+  name: "Gainesville, Florida, USA",
+  lat: 29.6516,
+  lng: -82.3248,
+  type: "other"
+},
+/* MARKER END: Gainesville */
+
+/* MARKER START: Minneapolis */
+{
+  name: "Minneapolis, Minnesota, USA",
+  lat: 44.9778,
+  lng: -93.2650,
+  type: "other"
+},
+/* MARKER END: Minneapolis */
+
+/* MARKER START: Portland OR */
+{
+  name: "Portland, Oregon, USA",
+  lat: 45.5152,
+  lng: -122.6784,
+  type: "other"
+},
+/* MARKER END: Portland OR */
+
+/* MARKER START: Albuquerque */
+{
+  name: "Albuquerque, New Mexico, USA",
+  lat: 35.0844,
+  lng: -106.6504,
+  type: "other"
+},
+/* MARKER END: Albuquerque */
+
+/* MARKER START: Baltimore */
+{
+  name: "Baltimore, Maryland, USA",
+  lat: 39.2904,
+  lng: -76.6122,
+  type: "other"
+},
+/* MARKER END: Baltimore */
+
+/* MARKER START: Connecticut */
+{
+  name: "Connecticut, USA",
+  lat: 41.6032,
+  lng: -73.0877,
+  type: "other"
+},
+/* MARKER END: Connecticut */
+
+/* MARKER START: Albany */
+{
+  name: "Albany, New York, USA",
+  lat: 42.6526,
+  lng: -73.7562,
+  type: "other"
+},
+/* MARKER END: Albany */
+
+/* MARKER START: Knoxville */
+{
+  name: "Knoxville, Tennessee, USA",
+  lat: 35.9606,
+  lng: -83.9207,
+  type: "other"
+}
+/* MARKER END: Knoxville */
       /* ---------------------------------------------------------- */
       /* TO ADD ANOTHER MARKER:                                     */
       /* 1. Copy one full marker block above                        */
