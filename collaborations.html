@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collaborations | The MODES Lab</title>
+  <meta name="description" content="Collaborations map for the MODES Lab" />
+
+  <!-- YOUR SITE CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- LEAFLET CSS -->
+  <!-- Official stable CDN snippet from Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <style>
+    /* ------------------------------------------------------------ */
+    /* PAGE-SPECIFIC STYLES FOR THE COLLABORATIONS MAP              */
+    /* ------------------------------------------------------------ */
+
+    .map-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 28px;
+    }
+
+    .map-panel h2 {
+      margin-top: 0;
+      color: var(--ink);
+      text-align: center;
+    }
+
+    .map-panel p {
+      max-width: 70ch;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .world-map {
+      width: 100%;
+      height: 560px;
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .leaflet-container {
+      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Marker style shared by all locations */
+    .custom-location-marker {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 1px #000000;
+    }
+
+    /* Dublin marker */
+    .custom-location-marker.dublin {
+      background: forestgreen;
+    }
+
+    /* All other markers */
+    .custom-location-marker.other {
+      background: #000000;
+    }
+
+    .leaflet-popup-content {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 700px) {
+      .world-map {
+        height: 440px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-title" href="index.html">
+        <img src="images/modes-logo.png" alt="MODES Lab logo" />
+        <span class="visually-hidden">The MODES Lab</span>
+      </a>
+
+      <nav aria-label="Primary navigation" class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="outputs.html">Outputs</a>
+        <a href="team.html">Team</a>
+        <a aria-current="page" href="collaborations.html">Collaborations</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <header class="page-header">
+      <h1>Collaborations</h1>
+    </header>
+
+    <section class="map-panel">
+      <h2>Global Collaborations</h2>
+      <p>
+        This map shows collaboration locations using the same marker style across sites.
+        Dublin is highlighted in forest green. All other locations are shown in black.
+      </p>
+
+      <!-- MAP CONTAINER -->
+      <div id="world-map" class="world-map" aria-label="World map showing collaboration locations"></div>
+    </section>
+
+    <footer class="site-footer">
+      <div>© 2026 Daniel Weller, PhD</div>
+      <div>
+        <a href="mailto:wellerd2@gmail.com">wellerd2@gmail.com</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- LEAFLET JS -->
+  <!-- Official stable CDN snippet from Leaflet -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script>
+    /* ============================================================ */
+    /* COLLABORATION LOCATIONS                                      */
+    /* ============================================================ */
+    /* ADD NEW MARKERS HERE                                         */
+    /*                                                              */
+    /* Use this format:                                             */
+    /* {                                                            */
+    /*   name: "Place name",                                        */
+    /*   lat: 53.3498,                                              */
+    /*   lng: -6.2603,                                              */
+    /*   type: "other"                                              */
+    /* }                                                            */
+    /*                                                              */
+    /* IMPORTANT:                                                   */
+    /* - Use decimal degree latitude and longitude                  */
+    /* - This is the same kind of lat/lng you get from Google Maps  */
+    /* - Dublin should use type: "dublin"                           */
+    /* - All other places should use type: "other"                  */
+    /*                                                              */
+    /* Marker color rules:                                          */
+    /* - type: "dublin" = forest green                              */
+    /* - type: "other"  = black                                     */
+    /* ============================================================ */
+
+    const collaborationLocations = [
+      /* MARKER START: Dublin */
+      {
+        name: "Dublin, Ireland",
+        lat: 53.3498,
+        lng: -6.2603,
+        type: "dublin"
+      },
+      /* MARKER END: Dublin */
+
+      /* MARKER START: Rochester */
+      {
+        name: "Rochester, New York, USA",
+        lat: 43.1566,
+        lng: -77.6088,
+        type: "other"
+      },
+      /* MARKER END: Rochester */
+
+      /* MARKER START: Blacksburg */
+      {
+        name: "Blacksburg, Virginia, USA",
+        lat: 37.2296,
+        lng: -80.4139,
+        type: "other"
+      },
+      /* MARKER END: Blacksburg */
+
+      /* MARKER START: Atlanta */
+      {
+        name: "Atlanta, Georgia, USA",
+        lat: 33.7490,
+        lng: -84.3880,
+        type: "other"
+      }
+      /* MARKER END: Atlanta */
+
+      /* ---------------------------------------------------------- */
+      /* TO ADD ANOTHER MARKER:                                     */
+      /* 1. Copy one full marker block above                        */
+      /* 2. Paste it before the closing ]                           */
+      /* 3. Change the name, lat, lng, and type                     */
+      /* 4. Make sure there is a comma after each marker except     */
+      /*    the very last one                                       */
+      /* ---------------------------------------------------------- */
+    ];
+
+    /* ============================================================ */
+    /* CREATE THE MAP                                               */
+    /* ============================================================ */
+
+    const map = L.map("world-map", {
+      zoomControl: true,
+      attributionControl: false,
+      worldCopyJump: true
+    });
+
+    map.setView([20, 0], 2);
+
+    /* ============================================================ */
+    /* WORLD COUNTRY OUTLINES                                       */
+    /* ============================================================ */
+    /* This GeoJSON source is country boundaries derived from       */
+    /* Natural Earth data.                                          */
+    /* ============================================================ */
+
+    const worldGeoJsonUrl =
+      "https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson";
+
+    fetch(worldGeoJsonUrl)
+      .then(response => response.json())
+      .then(worldData => {
+        const worldLayer = L.geoJSON(worldData, {
+          style: function () {
+            return {
+              color: "#000000",
+              weight: 1,
+              opacity: 1,
+              fillColor: "#ffffff",
+              fillOpacity: 1
+            };
+          }
+        }).addTo(map);
+
+        addCollaborationMarkers();
+
+        const markerBounds = L.latLngBounds(
+          collaborationLocations.map(location => [location.lat, location.lng])
+        );
+
+        const combinedBounds = worldLayer.getBounds().extend(markerBounds);
+        map.fitBounds(combinedBounds.pad(-0.02));
+      })
+      .catch(error => {
+        console.error("Could not load world country outlines:", error);
+
+        addCollaborationMarkers();
+
+        const markerBounds = L.latLngBounds(
+          collaborationLocations.map(location => [location.lat, location.lng])
+        );
+
+        map.fitBounds(markerBounds.pad(1.2));
+      });
+
+    /* ============================================================ */
+    /* ADD MARKERS                                                  */
+    /* ============================================================ */
+
+    function addCollaborationMarkers() {
+      collaborationLocations.forEach(location => {
+        const markerHtml = `
+          <div class="custom-location-marker ${location.type}"></div>
+        `;
+
+        const customIcon = L.divIcon({
+          className: "",
+          html: markerHtml,
+          iconSize: [16, 16],
+          iconAnchor: [8, 8],
+          popupAnchor: [0, -8]
+        });
+
+        const marker = L.marker([location.lat, location.lng], {
+          icon: customIcon
+        }).addTo(map);
+
+        marker.bindPopup(`<strong>${location.name}</strong>`);
+      });
+    }
+  </script>
+</body>
+</html>
