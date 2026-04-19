@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- LEAFLET CSS -->
+  <!-- Leaflet CSS -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -76,6 +76,20 @@
     .leaflet-popup-content {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.35;
+    }
+
+    .popup-list {
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .popup-list div {
+      margin-bottom: 4px;
+    }
+
+    .popup-list div:last-child {
+      margin-bottom: 0;
     }
 
     .map-legend {
@@ -155,7 +169,6 @@
         This map shows collaborator locations, with University College Dublin (Dublin) highlighted in yellow, current and former affiliations in green, and collaborators in blue.
       </p>
 
-      <!-- MAP CONTAINER -->
       <div id="world-map" class="world-map" aria-label="World map showing collaboration locations"></div>
 
       <div class="map-legend" aria-label="Map legend">
@@ -173,7 +186,7 @@
     </footer>
   </main>
 
-  <!-- LEAFLET JS -->
+  <!-- Leaflet JS -->
   <script
     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -183,154 +196,200 @@
   <script>
     const collaborationLocations = [
       {
-       const collaborationLocations = [
-  {
-    institutions: [
-      "University College Dublin"
-    ],
-    lat: 53.3498,
-    lng: -6.2603,
-    type: "dublin"
-  },
-  {
-    institutions: [
-      "University of Rochester Medical Center"
-    ],
-    lat: 43.1566,
-    lng: -77.6088,
-    type: "affiliation"
-  },
-  {
-    institutions: [
-      "Virginia Tech"
-    ],
-    lat: 37.2296,
-    lng: -80.4139,
-    type: "affiliation"
-  },
-  {
-    institutions: [
-      "Centers for Disease Control and Prevention"
-    ],
-    lat: 33.7490,
-    lng: -84.3880,
-    type: "affiliation"
-  },
-  {
-    institutions: [
-      "Cornell University",
-      "Ithaca College"
-    ],
-    lat: 42.45,
-    lng: -76.51,
-    type: "affiliation"
-  },
-  {
-    institutions: [
-      "Universidad Andrés Bello",
-      "Pontificia Universidad Católica de Chile"
-    ],
-    lat: -33.4489,
-    lng: -70.6693,
-    type: "other"
-  },
-  {
-    institutions: [
-      "Seychelles Ministry of Health"
-    ],
-    lat: -4.6796,
-    lng: 55.4920,
-    type: "other"
-  },
-  {
-    institutions: [
-      "University of Guelph"
-    ],
-    lat: 43.5448,
-    lng: -80.2482,
-    type: "other"
-  },
-  {
-    institutions: [
-      "University of Rhode Island"
-    ],
-    lat: 41.4804,
-    lng: -71.5312,
-    type: "other"
-  },
-  {
-    institutions: [
-      "Washington State University"
-    ],
-    lat: 46.2396,
-    lng: -119.1006,
-    type: "other"
-  },
-  {
-    institutions: [
-      "University of California, Davis"
-    ],
-    lat: 38.5449,
-    lng: -121.7405,
-    type: "other"
-  },
-  {
-    institutions: [
-      "University of Arizona"
-    ],
-    lat: 33.0581,
-    lng: -112.0476,
-    type: "other"
-  },
-  {
-    institutions: [
-      "Colorado State University"
-    ],
-    lat: 39.7392,
-    lng: -104.9903,
-    type: "other"
-  },
-  {
-    institutions: [
-      "Penn State"
-    ],
-    lat: 40.7934,
-    lng: -77.8600,
-    type: "other"
-  },
-  {
-    institutions: [
-      "Auburn University"
-    ],
-    lat: 32.6099,
-    lng: -85.4808,
-    type: "other"
-  },
-  {
-    institutions: [
-      "CEBAS-CSIC"
-    ],
-    lat: 37.9922,
-    lng: -1.1307,
-    type: "other"
-  },
-  {
-    institutions: [
-      "University of Florida"
-    ],
-    lat: 29.6516,
-    lng: -82.3248,
-    type: "other"
-  },
-  {
-    institutions: [
-      "University of Minnesota"
-    ],
-    lat: 44.9778,
-    lng: -93.2650,
-    type: "other"
-  }
-];
+        institutions: [
+          "University College Dublin"
+        ],
+        lat: 53.3498,
+        lng: -6.2603,
+        type: "dublin"
+      },
+      {
+        institutions: [
+          "University of Rochester Medical Center"
+        ],
+        lat: 43.1566,
+        lng: -77.6088,
+        type: "affiliation"
+      },
+      {
+        institutions: [
+          "Virginia Tech"
+        ],
+        lat: 37.2296,
+        lng: -80.4139,
+        type: "affiliation"
+      },
+      {
+        institutions: [
+          "Centers for Disease Control and Prevention"
+        ],
+        lat: 33.7490,
+        lng: -84.3880,
+        type: "affiliation"
+      },
+      {
+        institutions: [
+          "Cornell University",
+          "Ithaca College"
+        ],
+        lat: 42.45,
+        lng: -76.51,
+        type: "affiliation"
+      },
+      {
+        institutions: [
+          "Universidad Andrés Bello",
+          "Pontificia Universidad Católica de Chile"
+        ],
+        lat: -33.4489,
+        lng: -70.6693,
+        type: "other"
+      },
+      {
+        institutions: [
+          "Seychelles Ministry of Health"
+        ],
+        lat: -4.6796,
+        lng: 55.4920,
+        type: "other"
+      },
+      {
+        institutions: [
+          "University of Guelph"
+        ],
+        lat: 43.5448,
+        lng: -80.2482,
+        type: "other"
+      },
+      {
+        institutions: [
+          "University of Rhode Island"
+        ],
+        lat: 41.4804,
+        lng: -71.5312,
+        type: "other"
+      },
+      {
+        institutions: [
+          "Washington State University"
+        ],
+        lat: 46.2396,
+        lng: -119.1006,
+        type: "other"
+      },
+      {
+        institutions: [
+          "University of California, Davis"
+        ],
+        lat: 38.5449,
+        lng: -121.7405,
+        type: "other"
+      },
+      {
+        institutions: [
+          "University of Arizona"
+        ],
+        lat: 33.0581,
+        lng: -112.0476,
+        type: "other"
+      },
+      {
+        institutions: [
+          "Colorado State University"
+        ],
+        lat: 39.7392,
+        lng: -104.9903,
+        type: "other"
+      },
+      {
+        institutions: [
+          "Penn State"
+        ],
+        lat: 40.7934,
+        lng: -77.8600,
+        type: "other"
+      },
+      {
+        institutions: [
+          "Auburn University"
+        ],
+        lat: 32.6099,
+        lng: -85.4808,
+        type: "other"
+      },
+      {
+        institutions: [
+          "CEBAS-CSIC"
+        ],
+        lat: 37.9922,
+        lng: -1.1307,
+        type: "other"
+      },
+      {
+        institutions: [
+          "University of Florida"
+        ],
+        lat: 29.6516,
+        lng: -82.3248,
+        type: "other"
+      },
+      {
+        institutions: [
+          "University of Minnesota"
+        ],
+        lat: 44.9778,
+        lng: -93.2650,
+        type: "other"
+      },
+      {
+        institutions: [
+          "Oregon State University"
+        ],
+        lat: 45.5152,
+        lng: -122.6784,
+        type: "other"
+      },
+      {
+        institutions: [
+          "University of New Mexico"
+        ],
+        lat: 35.0844,
+        lng: -106.6504,
+        type: "other"
+      },
+      {
+        institutions: [
+          "Johns Hopkins University"
+        ],
+        lat: 39.2904,
+        lng: -76.6122,
+        type: "other"
+      },
+      {
+        institutions: [
+          "University of Connecticut"
+        ],
+        lat: 41.6032,
+        lng: -73.0877,
+        type: "other"
+      },
+      {
+        institutions: [
+          "University at Albany"
+        ],
+        lat: 42.6526,
+        lng: -73.7562,
+        type: "other"
+      },
+      {
+        institutions: [
+          "University of Tennessee"
+        ],
+        lat: 35.9606,
+        lng: -83.9207,
+        type: "other"
+      }
+    ];
 
     const map = L.map("world-map", {
       zoomControl: true,
@@ -398,14 +457,14 @@
         }).addTo(map);
 
         const institutionList = location.institutions
-  ? location.institutions.map(i => `<div>${i}</div>`).join("")
-  : `<div>${location.name}</div>`;
+          ? location.institutions.map(i => `<div>${i}</div>`).join("")
+          : `<div>${location.name}</div>`;
 
-marker.bindPopup(`
-  <div class="popup-list">
-    ${institutionList}
-  </div>
-`);
+        marker.bindPopup(`
+          <div class="popup-list">
+            ${institutionList}
+          </div>
+        `);
       });
     }
   </script>
