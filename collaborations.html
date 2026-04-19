@@ -1,230 +1,414 @@
-<script>
-  const collaborationLocations = [
-    {
-      name: "Dublin, Ireland",
-      lat: 53.3498,
-      lng: -6.2603,
-      type: "dublin"
-    },
-    {
-      name: "Rochester, New York, USA",
-      lat: 43.1566,
-      lng: -77.6088,
-      type: "affiliation"
-    },
-    {
-      name: "Blacksburg, Virginia, USA",
-      lat: 37.2296,
-      lng: -80.4139,
-      type: "affiliation"
-    },
-    {
-      name: "Atlanta, Georgia, USA",
-      lat: 33.7490,
-      lng: -84.3880,
-      type: "affiliation"
-    },
-    {
-      name: "Ithaca, New York, USA",
-      lat: 42.45,
-      lng: -76.51,
-      type: "affiliation"
-    },
-    {
-      name: "Santiago, Chile",
-      lat: -33.4489,
-      lng: -70.6693,
-      type: "other"
-    },
-    {
-      name: "Seychelles",
-      lat: -4.6796,
-      lng: 55.4920,
-      type: "other"
-    },
-    {
-      name: "Guelph, Ontario, Canada",
-      lat: 43.5448,
-      lng: -80.2482,
-      type: "other"
-    },
-    {
-      name: "Kingston, Rhode Island, USA",
-      lat: 41.4804,
-      lng: -71.5312,
-      type: "other"
-    },
-    {
-      name: "Pasco, Washington, USA",
-      lat: 46.2396,
-      lng: -119.1006,
-      type: "other"
-    },
-    {
-      name: "Davis, California, USA",
-      label: "University of California, Davis",
-      lat: 38.5449,
-      lng: -121.7405,
-      type: "other"
-    },
-    {
-      name: "Maricopa, Arizona, USA",
-      label: "University of Arizona",
-      lat: 33.0581,
-      lng: -112.0476,
-      type: "other"
-    },
-    {
-      name: "Denver, Colorado, USA",
-      label: "Colorado State University",
-      lat: 39.7392,
-      lng: -104.9903,
-      type: "other"
-    },
-    {
-      name: "State College, Pennsylvania, USA",
-      lat: 40.7934,
-      lng: -77.8600,
-      type: "other"
-    },
-    {
-      name: "Washington, DC, USA",
-      lat: 38.9072,
-      lng: -77.0369,
-      type: "other"
-    },
-    {
-      name: "Auburn, Alabama, USA",
-      lat: 32.6099,
-      lng: -85.4808,
-      type: "other"
-    },
-    {
-      name: "Murcia, Spain",
-      label: "CEBAS-CSIC",
-      lat: 37.9922,
-      lng: -1.1307,
-      type: "other"
-    },
-    {
-      name: "Gainesville, Florida, USA",
-      lat: 29.6516,
-      lng: -82.3248,
-      type: "other"
-    },
-    {
-      name: "Minneapolis, Minnesota, USA",
-      lat: 44.9778,
-      lng: -93.2650,
-      type: "other"
-    },
-    {
-      name: "Portland, Oregon, USA",
-      lat: 45.5152,
-      lng: -122.6784,
-      type: "other"
-    },
-    {
-      name: "Albuquerque, New Mexico, USA",
-      lat: 35.0844,
-      lng: -106.6504,
-      type: "other"
-    },
-    {
-      name: "Baltimore, Maryland, USA",
-      lat: 39.2904,
-      lng: -76.6122,
-      type: "other"
-    },
-    {
-      name: "Connecticut, USA",
-      lat: 41.6032,
-      lng: -73.0877,
-      type: "other"
-    },
-    {
-      name: "Albany, New York, USA",
-      lat: 42.6526,
-      lng: -73.7562,
-      type: "other"
-    },
-    {
-      name: "Knoxville, Tennessee, USA",
-      lat: 35.9606,
-      lng: -83.9207,
-      type: "other"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collaborations | The MODES Lab</title>
+  <meta name="description" content="Collaborations map for the MODES Lab" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- LEAFLET CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <style>
+    .map-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 28px;
     }
-  ];
 
-  const map = L.map("world-map", {
-    zoomControl: true,
-    attributionControl: false,
-    worldCopyJump: true
-  });
+    .map-panel h2 {
+      margin-top: 0;
+      color: var(--ink);
+      text-align: center;
+    }
 
-  map.setView([20, 0], 2);
+    .map-panel p {
+      max-width: 70ch;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
 
-  const worldGeoJsonUrl =
-    "https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson";
+    .world-map {
+      width: 100%;
+      height: 560px;
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+    }
 
-  fetch(worldGeoJsonUrl)
-    .then(response => response.json())
-    .then(worldData => {
-      const worldLayer = L.geoJSON(worldData, {
-        style: function () {
-          return {
-            color: "#000000",
-            weight: 1,
-            opacity: 1,
-            fillColor: "#ffffff",
-            fillOpacity: 1
-          };
-        }
-      }).addTo(map);
+    .leaflet-container {
+      background: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-      addCollaborationMarkers();
+    .custom-location-marker {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 2px rgba(0,0,0,.85);
+    }
 
-      const markerBounds = L.latLngBounds(
-        collaborationLocations.map(location => [location.lat, location.lng])
-      );
+    .custom-location-marker.dublin {
+      background: #fad239;
+    }
 
-      const combinedBounds = worldLayer.getBounds().extend(markerBounds);
-      map.fitBounds(combinedBounds.pad(-0.02));
-    })
-    .catch(error => {
-      console.error("Could not load world country outlines:", error);
+    .custom-location-marker.affiliation {
+      background: #6bbe51;
+    }
 
-      addCollaborationMarkers();
+    .custom-location-marker.other {
+      background: #007db8;
+    }
 
-      const markerBounds = L.latLngBounds(
-        collaborationLocations.map(location => [location.lat, location.lng])
-      );
+    .leaflet-popup-content {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.35;
+    }
 
-      map.fitBounds(markerBounds.pad(1.2));
+    .map-legend {
+      margin-top: 14px;
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+    }
+
+    .map-legend .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .map-legend .dot {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.85);
+    }
+
+    .map-legend .dot.dublin {
+      background: #fad239;
+    }
+
+    .map-legend .dot.affiliation {
+      background: #6bbe51;
+    }
+
+    .map-legend .dot.other {
+      background: #007db8;
+    }
+
+    @media (max-width: 700px) {
+      .world-map {
+        height: 440px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-title" href="index.html">
+        <img src="images/modes-logo.png" alt="MODES Lab logo" />
+        <span class="visually-hidden">The MODES Lab</span>
+      </a>
+
+      <nav aria-label="Primary navigation" class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="outputs.html">Outputs</a>
+        <a href="team.html">Team</a>
+        <a aria-current="page" href="collaborations.html">Collaborations</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <header class="page-header">
+      <h1>Collaborations</h1>
+    </header>
+
+    <section class="map-panel">
+      <h2>Collaborations</h2>
+      <p>
+        This map shows collaborator locations, with University College Dublin (Dublin) highlighted in yellow, current and former affiliations in green, and collaborators in blue.
+      </p>
+
+      <!-- MAP CONTAINER -->
+      <div id="world-map" class="world-map" aria-label="World map showing collaboration locations"></div>
+
+      <div class="map-legend" aria-label="Map legend">
+        <div class="legend-item"><span class="dot dublin"></span> Dublin</div>
+        <div class="legend-item"><span class="dot affiliation"></span> Current and former affiliations</div>
+        <div class="legend-item"><span class="dot other"></span> Collaborators</div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div>© 2026 Daniel Weller, PhD</div>
+      <div>
+        <a href="mailto:wellerd2@gmail.com">wellerd2@gmail.com</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- LEAFLET JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script>
+    const collaborationLocations = [
+      {
+        name: "Dublin, Ireland",
+        lat: 53.3498,
+        lng: -6.2603,
+        type: "dublin"
+      },
+      {
+        name: "Rochester, New York, USA",
+        lat: 43.1566,
+        lng: -77.6088,
+        type: "affiliation"
+      },
+      {
+        name: "Blacksburg, Virginia, USA",
+        lat: 37.2296,
+        lng: -80.4139,
+        type: "affiliation"
+      },
+      {
+        name: "Atlanta, Georgia, USA",
+        lat: 33.7490,
+        lng: -84.3880,
+        type: "affiliation"
+      },
+      {
+        name: "Ithaca, New York, USA",
+        lat: 42.45,
+        lng: -76.51,
+        type: "affiliation"
+      },
+      {
+        name: "Santiago, Chile",
+        lat: -33.4489,
+        lng: -70.6693,
+        type: "other"
+      },
+      {
+        name: "Seychelles",
+        lat: -4.6796,
+        lng: 55.4920,
+        type: "other"
+      },
+      {
+        name: "Guelph, Ontario, Canada",
+        lat: 43.5448,
+        lng: -80.2482,
+        type: "other"
+      },
+      {
+        name: "Kingston, Rhode Island, USA",
+        lat: 41.4804,
+        lng: -71.5312,
+        type: "other"
+      },
+      {
+        name: "Pasco, Washington, USA",
+        lat: 46.2396,
+        lng: -119.1006,
+        type: "other"
+      },
+      {
+        name: "Davis, California, USA",
+        label: "University of California, Davis",
+        lat: 38.5449,
+        lng: -121.7405,
+        type: "other"
+      },
+      {
+        name: "Maricopa, Arizona, USA",
+        label: "University of Arizona",
+        lat: 33.0581,
+        lng: -112.0476,
+        type: "other"
+      },
+      {
+        name: "Denver, Colorado, USA",
+        label: "Colorado State University",
+        lat: 39.7392,
+        lng: -104.9903,
+        type: "other"
+      },
+      {
+        name: "State College, Pennsylvania, USA",
+        lat: 40.7934,
+        lng: -77.8600,
+        type: "other"
+      },
+      {
+        name: "Washington, DC, USA",
+        lat: 38.9072,
+        lng: -77.0369,
+        type: "other"
+      },
+      {
+        name: "Auburn, Alabama, USA",
+        lat: 32.6099,
+        lng: -85.4808,
+        type: "other"
+      },
+      {
+        name: "Murcia, Spain",
+        label: "CEBAS-CSIC",
+        lat: 37.9922,
+        lng: -1.1307,
+        type: "other"
+      },
+      {
+        name: "Gainesville, Florida, USA",
+        lat: 29.6516,
+        lng: -82.3248,
+        type: "other"
+      },
+      {
+        name: "Minneapolis, Minnesota, USA",
+        lat: 44.9778,
+        lng: -93.2650,
+        type: "other"
+      },
+      {
+        name: "Portland, Oregon, USA",
+        lat: 45.5152,
+        lng: -122.6784,
+        type: "other"
+      },
+      {
+        name: "Albuquerque, New Mexico, USA",
+        lat: 35.0844,
+        lng: -106.6504,
+        type: "other"
+      },
+      {
+        name: "Baltimore, Maryland, USA",
+        lat: 39.2904,
+        lng: -76.6122,
+        type: "other"
+      },
+      {
+        name: "Connecticut, USA",
+        lat: 41.6032,
+        lng: -73.0877,
+        type: "other"
+      },
+      {
+        name: "Albany, New York, USA",
+        lat: 42.6526,
+        lng: -73.7562,
+        type: "other"
+      },
+      {
+        name: "Knoxville, Tennessee, USA",
+        lat: 35.9606,
+        lng: -83.9207,
+        type: "other"
+      }
+    ];
+
+    const map = L.map("world-map", {
+      zoomControl: true,
+      attributionControl: false,
+      worldCopyJump: true
     });
 
-  function addCollaborationMarkers() {
-    collaborationLocations.forEach(location => {
-      const markerHtml = `
-        <div class="custom-location-marker ${location.type}"></div>
-      `;
+    map.setView([20, 0], 2);
 
-      const customIcon = L.divIcon({
-        className: "",
-        html: markerHtml,
-        iconSize: [20, 20],
-        iconAnchor: [10, 10],
-        popupAnchor: [0, -10]
+    const worldGeoJsonUrl =
+      "https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson";
+
+    fetch(worldGeoJsonUrl)
+      .then(response => response.json())
+      .then(worldData => {
+        const worldLayer = L.geoJSON(worldData, {
+          style: function () {
+            return {
+              color: "#000000",
+              weight: 1,
+              opacity: 1,
+              fillColor: "#ffffff",
+              fillOpacity: 1
+            };
+          }
+        }).addTo(map);
+
+        addCollaborationMarkers();
+
+        const markerBounds = L.latLngBounds(
+          collaborationLocations.map(location => [location.lat, location.lng])
+        );
+
+        const combinedBounds = worldLayer.getBounds().extend(markerBounds);
+        map.fitBounds(combinedBounds.pad(-0.02));
+      })
+      .catch(error => {
+        console.error("Could not load world country outlines:", error);
+
+        addCollaborationMarkers();
+
+        const markerBounds = L.latLngBounds(
+          collaborationLocations.map(location => [location.lat, location.lng])
+        );
+
+        map.fitBounds(markerBounds.pad(1.2));
       });
 
-      const marker = L.marker([location.lat, location.lng], {
-        icon: customIcon
-      }).addTo(map);
+    function addCollaborationMarkers() {
+      collaborationLocations.forEach(location => {
+        const markerHtml = `
+          <div class="custom-location-marker ${location.type}"></div>
+        `;
 
-      marker.bindPopup(`
-        <strong>${location.name}</strong>
-        ${location.label ? `<br/>${location.label}` : ""}
-      `);
-    });
-  }
-</script>
+        const customIcon = L.divIcon({
+          className: "",
+          html: markerHtml,
+          iconSize: [20, 20],
+          iconAnchor: [10, 10],
+          popupAnchor: [0, -10]
+        });
+
+        const marker = L.marker([location.lat, location.lng], {
+          icon: customIcon
+        }).addTo(map);
+
+        marker.bindPopup(`
+          <strong>${location.name}</strong>
+          ${location.label ? `<br/>${location.label}` : ""}
+        `);
+      });
+    }
+  </script>
+</body>
+</html>
